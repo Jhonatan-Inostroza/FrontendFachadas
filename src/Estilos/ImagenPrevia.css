@@ -1,0 +1,38 @@
+/* Contenedor principal de la imagen */
+.preview {
+  width: 100%; /* Ancho deseado del contenedor de la imagen */
+  /* height: 100%; <-- ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ COMENTADA O ELIMINADA */
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(255, 255, 255); /* Sombra para pantallas grandes */
+}
+
+/* Estilos de la imagen dentro del contenedor */
+.preview img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto;
+}
+
+/* ESTILO RESPONSIVE PARA MÓVILES */
+@media (max-width: 480px) {
+  .preview {
+    height: auto; /* La altura se ajusta automáticamente */
+    box-shadow: 0 0 5px rgb(255, 255, 255); /* Sombra más pequeña para móviles */
+  }
+  .preview img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

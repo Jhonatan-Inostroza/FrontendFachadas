@@ -1,0 +1,175 @@
+#root {
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+  max-width: 1600px; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 1rem; /* Añade un padding horizontal para que no se pegue a los bordes */
+  text-align: center;
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho */
+}
+
+/*ESTILOS*/
+
+.container {
+  padding: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%; /* Ocupa el 100% del ancho de su padre */
+  max-width: 1200px; /* Un ancho máximo para el contenedor del título */
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+
+.container-img {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  text-align: center;
+  margin: 2rem auto;
+  width: 100%; /* Ocupa el 100% del ancho de su padre (#root) */
+  max-width: 1600px; /* Mantiene el max-width original */
+  padding: 1rem; /* Reduce el padding para dar más espacio al contenido */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.columna {
+  flex: 1;
+  max-width: 60%; /* Mantén este max-width para la COLUMNA, no para la imagen */
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto; /* Asegura que la columna se adapte a su contenido */
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho */
+}
+
+/* --- ESTILOS para el contenedor del contenido de la columna de resultados (el div anidado) --- */
+.columna-contenido-resultados {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilos para el contenedor de la cuadrícula de resultados */
+.grid-resultados {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Estilos para cada elemento individual de la cuadrícula */
+.grid-item {
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Altura fija para cada slot */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.grid-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+/* Estilos para las imágenes dentro de ResultadoImg (están bien) */
+.grid-item img {
+    max-width: 100%;
+    max-height: 150px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Estilos para el texto de resultado dentro de ResultadoImg */
+.grid-item pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0.7em;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 5px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+
+/* --- ESTILOS para ImagenPrevia (columna izquierda) --- */
+/* ¡ESTE ES EL CAMBIO CLAVE! */
+.imagen-previa-container {
+    width: 100%; /* Toma el 100% del ancho de su padre (.columna) */
+    padding-bottom: 100%; /* ¡CREA UN ESPACIO CUADRADO! (100% del ancho = misma altura) */
+    position: relative; /* Necesario para que el contenido absoluto (la imagen) se posicione correctamente */
+    overflow: hidden; /* Oculta si algo se desborda del cuadrado */
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Para visualizar el borde del contenedor cuadrado */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho/alto */
+}
+
+/* ¡Y ESTE ES EL COMPLEMENTO PARA LA IMAGEN DENTRO! */
+/* Apunta a la imagen DENTRO de .imagen-previa-container */
+.imagen-previa-container .preview img { /* O .imagen-previa-container img si el .preview div no es relevante */
+    position: absolute; /* Permite posicionarla exactamente dentro del padding-bottom */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centrado perfecto */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; /* Mantiene la proporción al escalar */
+    height: auto; /* Mantiene la proporción al escalar */
+    object-fit: contain; /* Asegura que la imagen se vea completa dentro del cuadrado */
+    border-radius: 8px; /* Mantiene bordes redondeados en la imagen */
+}
+
+
+@media (max-width: 768px) {
+    .container-img {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem; /* Asegura padding en móvil también */
+    }
+
+    .columna {
+        max-width: 100%; /* En móvil, ocupa el 100% de su padre */
+        width: 100%; /* Asegura que siempre tome el 100% */
+        padding: 1rem; /* Asegura padding en móvil */
+    }
+
+    .grid-resultados {
+        grid-template-columns: 1fr;
+        max-width: 100%; /* Asegura que la cuadrícula también sea flexible */
+    }
+
+    /* Ajuste para móviles si quieres que el contenedor de la imagen principal también sea responsivo */
+    .imagen-previa-container {
+        width: 100%; /* Ahora toma el 100% del ancho de la columna */
+        padding-bottom: 100%; /* Y se mantiene cuadrado */
+    }
+}

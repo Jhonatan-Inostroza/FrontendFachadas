@@ -1,0 +1,53 @@
+/* src/Estilos/Botones.css */
+
+/* Estilos generales para el contenedor de botones */
+.botones-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan a la siguiente línea si no hay espacio */
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 20px; /* Espacio debajo del grupo de botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+}
+
+/* Estilos base para todos los botones dentro de este componente */
+.botones-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Color azul estándar */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    flex-grow: 1; /* Permite que los botones crezcan para llenar el espacio, útil en la barra izquierda */
+    min-width: 120px; /* Ancho mínimo para cada botón */
+}
+
+.botones-container button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-1px); /* Efecto ligero de elevación */
+}
+
+.botones-container button:active {
+    transform: translateY(0); /* Vuelve a la posición normal al clickear */
+}
+
+
+/* Estilo específico para el botón principal "Ejecutar Todos los Procesos Avanzados" */
+.boton-principal-avanzado {
+    background-color: #28a745 !important; /* Verde, !important para asegurar que prevalezca */
+    padding: 15px 30px !important;
+    font-size: 18px !important;
+    font-weight: bold;
+    width: 100%; /* Para que ocupe todo el ancho disponible en su contenedor */
+    max-width: 400px; /* Ancho máximo para que no sea demasiado grande */
+    margin: 0 auto; /* Centrarlo horizontalmente si tiene max-width */
+    display: block; /* Necesario para que `margin: auto` funcione con `width` */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacarlo */
+}
+
+.boton-principal-avanzado:hover {
+    background-color: #218838 !important; /* Verde más oscuro al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}

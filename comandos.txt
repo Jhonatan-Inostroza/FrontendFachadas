@@ -1,0 +1,21 @@
+npm install --save-dev @types/node
+npm install --save-dev typescript
+npm run dev
+
+
+
+Solución: Permitir scripts solo para tu cuenta
+-Abre PowerShell como administrador:
+-Busca "PowerShell" en el menú inicio.
+-Haz clic derecho → “Ejecutar como administrador”.
+
+Ejecuta el siguiente comando:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\Scripts\Activate.ps1
+src\Backend\pyentorno\Scripts\Activate.ps1
+
+pip install flask pillow
+pip install requests
+pip install flask pillow flask-cors
+pip install pylint
+pip install flake8

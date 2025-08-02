@@ -1,0 +1,107 @@
+/* Estilos para el overlay de fondo de la modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50; /* Asegura que esté por encima de otros elementos */
+  padding: 1rem; /* Espaciado interno para la modal en pantallas pequeñas */
+}
+
+
+/* Estilos para el contenedor principal de la modal */
+.modal-content {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra */
+  padding: 1.5rem; /* Espaciado interno */
+  position: relative; /* Para posicionar el botón de cerrar */
+  max-width: 48rem; /* Ancho máximo (ej. 768px para Tailwind max-w-3xl) */
+  width: 100%; /* Ocupa todo el ancho disponible hasta el max-width */
+  max-height: 90vh; /* Altura máxima para que no ocupe toda la pantalla verticalmente */
+  overflow: auto; /* Permite desplazamiento si el contenido es muy largo */
+}
+
+/* Estilos para el botón de cerrar */
+.modal-close-button {
+  position: absolute;
+  top: 0.75rem; /* 12px desde arriba */
+  right: 0.75rem; /* 12px desde la derecha */
+  color: #6b7280; /* Color de texto gris */
+  font-size: 1.5rem; /* Tamaño de fuente grande */
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #1f2937; /* Color de texto más oscuro al pasar el ratón */
+}
+
+/* Estilos para el título de la modal */
+.modal-title {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+/* Contenedor de la imagen dentro de la modal */
+.modal-image-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  max-height: 70vh; /* Limita la altura de la imagen dentro de la modal */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+}
+
+/* Contenedor para el texto de resultado */
+.modal-result-text-container {
+  background-color: #f3f4f6; /* Fondo gris claro */
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  color: #4b5563;
+  white-space: pre-wrap; /* Mantiene saltos de línea y espacios */
+  word-break: break-words; /* Rompe palabras largas para evitar desbordamiento */
+  margin-bottom: 1rem;
+}
+
+.modal-result-text-container h3 {
+  font-weight: 600; /* Semibold */
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos para el botón de acción en la modal */
+.modal-action-button {
+  background-color: #3b82f6; /* Azul */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-action-button:hover {
+  background-color: #2563eb; /* Azul más oscuro al pasar el ratón */
+}
